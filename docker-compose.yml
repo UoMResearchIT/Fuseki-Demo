@@ -1,0 +1,19 @@
+services:
+  fuseki:
+    image: stain/jena-fuseki
+    container_name: fuseki
+    ports:
+      - "3030:3030"
+    environment:
+      ADMIN_PASSWORD: admin
+    volumes:
+      - fuseki-data:/fuseki
+    networks:
+      - fuseki-net
+
+volumes:
+  fuseki-data:
+    name: fuseki-data
+
+networks:
+  fuseki-net:      
